@@ -36,9 +36,6 @@ const Navbar = () => {
     >
       <div className=" w-[100%]">
         <Link href="/">
-          {/* <Title level={3} className=" mb-0">
-              
-            </Title> */}
           <Image
             src={logo}
             alt="logo"

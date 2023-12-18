@@ -7,8 +7,11 @@ import Image from "next/image";
 import RootLayout from "@/components/Layouts/RootLayout";
 import Link from "next/link";
 import { SelectOutlined } from "@ant-design/icons";
+import { useRouter } from "next/router";
 
 const LoginPage = () => {
+  const router = useRouter();
+
   return (
     <Row
       justify="center"

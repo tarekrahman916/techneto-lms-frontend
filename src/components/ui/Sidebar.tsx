@@ -53,6 +53,7 @@ const Sidebar = ({ children }: { children: React.ReactNode }) => {
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
+        className="hidden lg:block"
       >
         <h1 className="text-center text-white">LMS</h1>
         <Menu

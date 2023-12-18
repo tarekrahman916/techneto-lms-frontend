@@ -44,9 +44,9 @@ export const sidebarItems = (role: string) => {
   const adminItems: MenuProps["items"] = [
     ...commonItems,
     {
-      label: <Link href="/dashboard/admins/all-courses">All Courses </Link>,
+      label: <Link href="/dashboard/admins/courses">All Courses </Link>,
       icon: <UserOutlined />,
-      key: "/dashboard/admins/all-courses",
+      key: "/dashboard/admins/courses",
     },
     {
       label: <Link href="/dashboard/admins/students">Students </Link>,
@@ -54,9 +54,18 @@ export const sidebarItems = (role: string) => {
       key: "/dashboard/admins/students",
     },
     {
-      label: <Link href="/dashboard/admins/admin">Admins </Link>,
+      label: <Link href="/dashboard/admins/all-admins">Admins </Link>,
       icon: <UserOutlined />,
-      key: "/dashboard/admins/students",
+      key: "/dashboard/admins/all-admins",
+    },
+    {
+      label: (
+        <Link href="/dashboard/admins/courses/create-course">
+          Create Course{" "}
+        </Link>
+      ),
+      icon: <UserOutlined />,
+      key: "/dashboard/admins/courses/create-course",
     },
   ];
 

@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Button, Checkbox, Form, Input, message, Typography } from "antd";
-import { useRouter } from "next/navigation";
+
 import { useUserLoginMutation } from "@/redux/api/authApi";
 import { storeUserInfo } from "@/services/auth.service";
 import { LoginOutlined } from "@ant-design/icons";
+import { useRouter } from "next/router";
 const { Title } = Typography;
 
 type FieldType = {
@@ -15,12 +16,16 @@ const LoginForm = () => {
   const [userLogin] = useUserLoginMutation();
   const router = useRouter();
 
+  const from =
+    router.query.from === undefined || Array.isArray(router.query.from)
+      ? "/"
+      : router.query.from;
   const onFinish = async (data: any) => {
     try {
       const res = await userLogin({ ...data }).unwrap();
 
       if (res?.data?.accessToken) {
-        router.push("/");
+        router.push(from);
         message.success("User logged in successfully!");
       }
 

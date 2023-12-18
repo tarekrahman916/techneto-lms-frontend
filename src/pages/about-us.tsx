@@ -1,3 +1,4 @@
+import RootLayout from "@/components/Layouts/RootLayout";
 import React from "react";
 
 const AboutUsPage = () => {
@@ -9,3 +10,7 @@ const AboutUsPage = () => {
 };
 
 export default AboutUsPage;
+
+AboutUsPage.getLayout = function getLayout(page: React.ReactElement) {
+  return <RootLayout>{page}</RootLayout>;
+};
